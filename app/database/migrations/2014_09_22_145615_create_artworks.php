@@ -12,7 +12,14 @@ class CreateArtworks extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('artworks', function($table)
+		{
+		    $table->increments('id');
+		    $table->string('slug', 32)->unique();
+		    $table->string('namefull', 128);
+		    $table->text('description');
+		    $table->timestamps();
+		});
 	}
 
 	/**
@@ -22,7 +29,7 @@ class CreateArtworks extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('artworks');
 	}
 
 }

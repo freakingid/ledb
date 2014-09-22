@@ -15,7 +15,7 @@ class CreatePeople extends Migration {
 		Schema::create('people', function($table)
 		{
 		    $table->increments('id');
-		    $table->string('username', 128);
+		    $table->string('username', 128)->unique();
 		    $table->string('namelast', 64);
 		    $table->string('namefirst', 64);
 		    $table->date('dob');

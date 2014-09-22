@@ -12,7 +12,16 @@ class CreateEvents extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('events', function($table)
+		{
+		    $table->increments('id');
+		    $table->string('slug', 32)->unique();
+		    $table->string('namefull', 128);
+		    $table->text('description');
+		    $table->datetime('timestart');
+		    $table->datetime('timeend');
+		    $table->timestamps();
+		});
 	}
 
 	/**
@@ -22,7 +31,7 @@ class CreateEvents extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('events');
 	}
 
 }
