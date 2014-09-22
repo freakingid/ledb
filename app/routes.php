@@ -20,18 +20,11 @@ Route::get('/', function()
 
 // Right now this has all routes for all controllers
 
-// bind route parameters
-Route::model('artwork', 'Artwork');
-Route::model('event', 'Event');
-Route::model('location', 'Location');
-Route::model('performance', 'Performance');
-Route::model('person', 'Person');
-Route::model('tour', 'Tour');
-
 // default home listing
 Route::get('/', 'PerformanceController@index');
 
 // =======================================================================
+Route::model('artwork', 'Artwork');
 // artwork pages
 Route::get('/artwork/', 'ArtworkController@index');
 Route::get('/artwork/create', 'ArtworkController@create');
@@ -47,6 +40,7 @@ Route::get('/artwork/delete', 'ArtworkController@handleDelete');
 
 
 // =======================================================================
+Route::model('event', 'Event');
 // event pages
 Route::get('/event/', 'EventController@index');
 Route::get('/event/create', 'EventController@create');
@@ -62,6 +56,7 @@ Route::get('/event/delete', 'EventController@handleDelete');
 
 
 // =======================================================================
+Route::model('location', 'Location');
 // location pages
 Route::get('/location/', 'LocationController@index');
 Route::get('/location/create', 'LocationController@create');
@@ -77,6 +72,7 @@ Route::get('/location/delete', 'LocationController@handleDelete');
 
 
 // =======================================================================
+Route::model('performance', 'Performance');
 // performance pages
 Route::get('/performance/', 'PerformanceController@index');
 Route::get('/performance/create', 'PerformanceController@create');
@@ -92,6 +88,7 @@ Route::get('/performance/delete', 'PerformanceController@handleDelete');
 
 
 // =======================================================================
+Route::model('person', 'Person');
 // people pages
 // #warning or is it /people/ -- pluralizer
 Route::get('/person/', 'PersonController@index');
@@ -108,6 +105,7 @@ Route::get('/person/delete', 'PersonController@handleDelete');
 
 
 // =======================================================================
+Route::model('tour', 'Tour');
 // tour pages
 Route::get('/tour/', 'TourController@index');
 Route::get('/tour/create', 'TourController@create');
