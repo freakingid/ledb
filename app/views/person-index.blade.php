@@ -1,9 +1,43 @@
-<html>
-<head>
-<title>Testing</title>
-</head>
-<body>
-<h1>Testing is cool</h1>
-<p>Paragraphs are pretty good, as well.</p>
-</body>
-</html>
+@extends('layout')
+
+@section('content')
+    <div class="page-header">
+        <h1>All People</h1>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <a href="{{ action('PersonController@create') }}" class="btn btn-primary">Create Person</a>
+        </div>
+    </div>
+    
+    @if ($people->isEmpty())
+        <p>There are no people! <small>BUMMER</small></p>
+    @else
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Slug</th>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($people as $person)
+                <tr>
+                    <td>{{ $person->slug }}</td>
+                    <td>{{ $person->namefirst }} {{ $person->namelast}}</td>
+                    <td>{{ $person->timestart }}</td>
+                    <td>{{ $person->rating }}</td>
+                    <td>
+                        <a href="{{ action('PersonController@edit', $person->id) }}" class="btn btn-default">Edit</a>
+                        <a href="{{ action('PersonController@delete', $person->id) }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endif
+@stop
