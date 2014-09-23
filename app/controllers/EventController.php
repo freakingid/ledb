@@ -7,13 +7,13 @@ class EventController extends BaseController {
 	public function index()
 	{
 	    // show listing of events
-	    return View::make('index'); // #warning incomplete -- doesn't know what model type
+	    return View::make('event-index');
 	}
 	
 	public function create()
 	{
 	    // show create event form
-	    return View::make('create'); // #warning incomplete -- doesn't know what model type
+	    return View::make('event-create');
 	}
 	
 	public function handleCreate()
@@ -25,7 +25,7 @@ class EventController extends BaseController {
 	public function edit(Event $event)
 	{
 	    // show edit event form
-	    return View::make('edit'); // #warning incomplete -- doesn't know what model type
+	    return View::make('event-edit');
 	}
 	
 	public function handleEdit()
@@ -36,7 +36,7 @@ class EventController extends BaseController {
 	public function delete()
 	{
 	    // show delete confirmation
-	    return View::make('delete'); // #warning incomplete -- doesn't know what model type
+	    return View::make('event-delete');
 	}
 	
 	public function handleDelete()

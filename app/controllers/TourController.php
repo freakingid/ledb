@@ -7,13 +7,13 @@ class TourController extends BaseController {
 	public function index()
 	{
 	    // show listing of tours
-	    return View::make('index'); // #warning incomplete -- doesn't know what model type
+	    return View::make('tour-index');
 	}
 	
 	public function create()
 	{
 	    // show create tour form
-	    return View::make('create'); // #warning incomplete -- doesn't know what model type
+	    return View::make('tour-create');
 	}
 	
 	public function handleCreate()
@@ -25,7 +25,7 @@ class TourController extends BaseController {
 	public function edit(Tour $tour)
 	{
 	    // show edit tour form
-	    return View::make('edit'); // #warning incomplete -- doesn't know what model type
+	    return View::make('tour-edit');
 	}
 	
 	public function handleEdit()
@@ -36,7 +36,7 @@ class TourController extends BaseController {
 	public function delete()
 	{
 	    // show delete confirmation
-	    return View::make('delete'); // #warning incomplete -- doesn't know what model type
+	    return View::make('tour-delete');
 	}
 	
 	public function handleDelete()

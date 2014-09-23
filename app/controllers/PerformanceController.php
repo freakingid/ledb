@@ -7,13 +7,13 @@ class PerformanceController extends BaseController {
 	public function index()
 	{
 	    // show listing of performances
-	    return View::make('index'); // #warning incomplete -- doesn't know what model type
+	    return View::make('performance-index');
 	}
 	
 	public function create()
 	{
 	    // show create performance form
-	    return View::make('create'); // #warning incomplete -- doesn't know what model type
+	    return View::make('performance-create');
 	}
 	
 	public function handleCreate()
@@ -25,7 +25,7 @@ class PerformanceController extends BaseController {
 	public function edit(Performance $performance)
 	{
 	    // show edit performance form
-	    return View::make('edit'); // #warning incomplete -- doesn't know what model type
+	    return View::make('performance-edit');
 	}
 	
 	public function handleEdit()
@@ -36,7 +36,7 @@ class PerformanceController extends BaseController {
 	public function delete()
 	{
 	    // show delete confirmation
-	    return View::make('delete'); // #warning incomplete -- doesn't know what model type
+	    return View::make('performance-delete');
 	}
 	
 	public function handleDelete()

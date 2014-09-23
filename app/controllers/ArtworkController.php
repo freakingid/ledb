@@ -7,13 +7,15 @@ class ArtworkController extends BaseController {
 	public function index()
 	{
 	    // show listing of artworks
-	    return View::make('index'); // #warning incomplete -- doesn't know what model type
+	    #warning business logic should be moved out to service
+	    $artworks = Artwork::all();
+	    return View::make('artwork-index', compact('artworks'));
 	}
 	
 	public function create()
 	{
 	    // show create artwork form
-	    return View::make('create'); // #warning incomplete -- doesn't know what model type
+	    return View::make('artwork-create');
 	}
 	
 	public function handleCreate()
@@ -25,7 +27,7 @@ class ArtworkController extends BaseController {
 	public function edit(Artwork $artwork)
 	{
 	    // show edit artwork form
-	    return View::make('edit'); // #warning incomplete -- doesn't know what model type
+	    return View::make('artwork-edit');
 	}
 	
 	public function handleEdit()
@@ -36,7 +38,7 @@ class ArtworkController extends BaseController {
 	public function delete()
 	{
 	    // show delete confirmation
-	    return View::make('delete'); // #warning incomplete -- doesn't know what model type
+	    return View::make('artwork-delete');
 	}
 	
 	public function handleDelete()

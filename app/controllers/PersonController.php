@@ -7,13 +7,13 @@ class PersonController extends BaseController {
 	public function index()
 	{
 	    // show listing of people
-	    return View::make('index'); // #warning incomplete -- doesn't know what model type
+	    return View::make('person-index');
 	}
 	
 	public function create()
 	{
 	    // show create person form
-	    return View::make('create'); // #warning incomplete -- doesn't know what model type
+	    return View::make('person-create');
 	}
 	
 	public function handleCreate()
@@ -25,7 +25,7 @@ class PersonController extends BaseController {
 	public function edit(Person $person)
 	{
 	    // show edit person form
-	    return View::make('edit'); // #warning incomplete -- doesn't know what model type
+	    return View::make('person-edit');
 	}
 	
 	public function handleEdit()
@@ -36,7 +36,7 @@ class PersonController extends BaseController {
 	public function delete()
 	{
 	    // show delete confirmation
-	    return View::make('delete'); // #warning incomplete -- doesn't know what model type
+	    return View::make('person-delete');
 	}
 	
 	public function handleDelete()
