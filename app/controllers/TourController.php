@@ -6,8 +6,10 @@ class TourController extends BaseController {
 
 	public function index()
 	{
-	    // show listing of tours
-	    return View::make('tour-index');
+		// show listing of
+	    #warning business logic should be moved out to service
+	    $tours = Tour::all();
+	    return View::make('tour-index', compact('tours'));
 	}
 	
 	public function create()

@@ -6,8 +6,10 @@ class EventController extends BaseController {
 
 	public function index()
 	{
-	    // show listing of events
-	    return View::make('event-index');
+		// show listing of
+	    #warning business logic should be moved out to service
+	    $events = Event::all();
+	    return View::make('event-index', compact('events'));
 	}
 	
 	public function create()

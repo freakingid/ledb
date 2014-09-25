@@ -6,8 +6,10 @@ class PersonController extends BaseController {
 
 	public function index()
 	{
-	    // show listing of people
-	    return View::make('person-index');
+		// show listing of
+	    #warning business logic should be moved out to service
+	    $people = Person::all();
+	    return View::make('person-index', compact('people'));
 	}
 	
 	public function create()

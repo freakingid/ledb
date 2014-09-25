@@ -6,8 +6,10 @@ class PerformanceController extends BaseController {
 
 	public function index()
 	{
-	    // show listing of performances
-	    return View::make('performance-index');
+		// show listing of
+	    #warning business logic should be moved out to service
+	    $performances = Performance::all();
+	    return View::make('performance-index', compact('performances'));
 	}
 	
 	public function create()

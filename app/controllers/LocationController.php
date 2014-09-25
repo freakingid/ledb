@@ -6,8 +6,10 @@ class LocationController extends BaseController {
 
 	public function index()
 	{
-	    // show listing of locations
-	    return View::make('location-index');
+		// show listing of
+	    #warning business logic should be moved out to service
+	    $locations = Location::all();
+	    return View::make('location-index', compact('locations'));
 	}
 	
 	public function create()
