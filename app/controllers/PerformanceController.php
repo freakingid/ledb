@@ -21,7 +21,15 @@ class PerformanceController extends BaseController {
 	public function handleCreate()
 	{
 	    // handle creation form submission
-	    
+	    $performance = new Performance;
+	    $performance->slug = Input::get('slug');
+	    $performance->namefull = Input::get('namefull');
+	    $performance->description = Input::get('description');
+	    $performance->timestart = Input::get('timestart');
+	    $performance->rating = Input::get('rating');
+	    $performance->save();
+	    // get us back to index after saving
+	    return Redirect::action('PerformanceController@index');
 	}
 	
 	public function edit(Performance $performance)

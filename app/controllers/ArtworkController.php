@@ -21,7 +21,13 @@ class ArtworkController extends BaseController {
 	public function handleCreate()
 	{
 	    // handle creation form submission
-	    
+	    $artwork = new Artwork;
+	    $artwork->slug = Input::get('slug');
+	    $artwork->namefull = Input::get('namefull');
+	    $artwork->description = Input::get('description');
+	    $artwork->save();
+	    // get us back to index after saving
+	    return Redirect::action('ArtworkController@index');
 	}
 	
 	public function edit(Artwork $artwork)

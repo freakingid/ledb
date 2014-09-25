@@ -21,7 +21,20 @@ class LocationController extends BaseController {
 	public function handleCreate()
 	{
 	    // handle creation form submission
-	    
+	    $location = new Location;
+	    $location->slug = Input::get('slug');
+	    $location->namefull = Input::get('namefull');
+	    $location->description = Input::get('description');
+	    $location->addr1 = Input::get('addr1');
+	    $location->addr2 = Input::get('addr2');
+	    $location->city = Input::get('city');
+	    $location->state = Input::get('state');
+	    $location->zip = Input::get('zip');
+	    $location->email = Input::get('email');
+	    $location->phone = Input::get('phone');
+	    $location->save();
+	    // get us back to index after saving
+	    return Redirect::action('LocationController@index');
 	}
 	
 	public function edit(Location $location)

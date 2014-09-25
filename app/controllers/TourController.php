@@ -21,7 +21,15 @@ class TourController extends BaseController {
 	public function handleCreate()
 	{
 	    // handle creation form submission
-	    
+	    $tour = new Tour;
+	    $tour->slug = Input::get('slug');
+	    $tour->namefull = Input::get('namefull');
+	    $tour->description = Input::get('description');
+	    $tour->timestart = Input::get('timestart');
+	    $tour->timeend = Input::get('timeend');
+	    $tour->save();
+	    // get us back to index after saving
+	    return Redirect::action('TourController@index');
 	}
 	
 	public function edit(Tour $tour)

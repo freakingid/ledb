@@ -21,7 +21,15 @@ class EventController extends BaseController {
 	public function handleCreate()
 	{
 	    // handle creation form submission
-	    
+	    $event = new Event;
+	    $event->slug = Input::get('slug');
+	    $event->namefull = Input::get('namefull');
+	    $event->description = Input::get('description');
+	    $event->timestart = Input::get('timestart');
+	    $event->timeend = Input::get('timeend');
+	    $event->save();
+	    // get us back to index after saving
+	    return Redirect::action('EventController@index');
 	}
 	
 	public function edit(Event $event)
