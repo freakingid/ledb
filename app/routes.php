@@ -32,9 +32,9 @@ Route::get('/artwork/edit/{artwork}', 'ArtworkController@edit');
 Route::get('/artwork/delete/{artwork}', 'ArtworkController@delete');
 
 // artwork form handlers
-Route::get('/artwork/create', 'ArtworkController@handleCreate');
-Route::get('/artwork/edit', 'ArtworkController@handleEdit');
-Route::get('/artwork/delete', 'ArtworkController@handleDelete');
+Route::post('/artwork/create', 'ArtworkController@handleCreate');
+Route::post('/artwork/edit', 'ArtworkController@handleEdit');
+Route::post('/artwork/delete', 'ArtworkController@handleDelete');
 
 
 
@@ -48,9 +48,9 @@ Route::get('/event/edit/{event}', 'EventController@edit');
 Route::get('/event/delete/{event}', 'EventController@delete');
 
 // event form handlers
-Route::get('/event/create', 'EventController@handleCreate');
-Route::get('/event/edit', 'EventController@handleEdit');
-Route::get('/event/delete', 'EventController@handleDelete');
+Route::post('/event/create', 'EventController@handleCreate');
+Route::post('/event/edit', 'EventController@handleEdit');
+Route::post('/event/delete', 'EventController@handleDelete');
 
 
 
@@ -64,9 +64,9 @@ Route::get('/location/edit/{location}', 'LocationController@edit');
 Route::get('/location/delete/{location}', 'LocationController@delete');
 
 // location form handlers
-Route::get('/location/create', 'LocationController@handleCreate');
-Route::get('/location/edit', 'LocationController@handleEdit');
-Route::get('/location/delete', 'LocationController@handleDelete');
+Route::post('/location/create', 'LocationController@handleCreate');
+Route::post('/location/edit', 'LocationController@handleEdit');
+Route::post('/location/delete', 'LocationController@handleDelete');
 
 
 
@@ -80,9 +80,9 @@ Route::get('/performance/edit/{performance}', 'PerformanceController@edit');
 Route::get('/performance/delete/{performance}', 'PerformanceController@delete');
 
 // performance form handlers
-Route::get('/performance/create', 'PerformanceController@handleCreate');
-Route::get('/performance/edit', 'PerformanceController@handleEdit');
-Route::get('/performance/delete', 'PerformanceController@handleDelete');
+Route::post('/performance/create', 'PerformanceController@handleCreate');
+Route::post('/performance/edit', 'PerformanceController@handleEdit');
+Route::post('/performance/delete', 'PerformanceController@handleDelete');
 
 
 
@@ -97,9 +97,9 @@ Route::get('/person/edit/{person}', 'PersonController@edit');
 Route::get('/person/delete/{person}', 'PersonController@delete');
 
 // people form handlers
-Route::get('/person/create', 'PersonController@handleCreate');
-Route::get('/person/edit', 'PersonController@handleEdit');
-Route::get('/person/delete', 'PersonController@handleDelete');
+Route::post('/person/create', 'PersonController@handleCreate');
+Route::post('/person/edit', 'PersonController@handleEdit');
+Route::post('/person/delete', 'PersonController@handleDelete');
 
 
 
@@ -113,7 +113,7 @@ Route::get('/tour/edit/{tour}', 'TourController@edit');
 Route::get('/tour/delete/{tour}', 'TourController@delete');
 
 // tour form handlers
-Route::get('/tour/create', 'TourController@handleCreate');
-Route::get('/tour/edit', 'TourController@handleEdit');
-Route::get('/tour/delete', 'TourController@handleDelete');
+Route::post('/tour/create', 'TourController@handleCreate');
+Route::post('/tour/edit', 'TourController@handleEdit');
+Route::post('/tour/delete', 'TourController@handleDelete');
 
