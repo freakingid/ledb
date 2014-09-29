@@ -32,13 +32,20 @@ class ArtworkController extends BaseController {
 	
 	public function edit(Artwork $artwork)
 	{
-	    // show edit artwork form
-	    return View::make('artwork-edit');
+	    // show edit form
+	    return View::make('artwork-edit', compact('artwork'));
 	}
 	
 	public function handleEdit()
 	{
 	    // handle edit form submission
+	    $artwork = Artwork::findOrFail(Input::get('id'));
+	    $artwork->slug = Input::get('slug');
+	    $artwork->namefull = Input::get('namefull');
+	    $artwork->description = Input::get('description');
+	    $artwork->save();
+	    // show list
+	    return Redirect::action('ArtworkController@index');
 	}
 	
 	public function delete()
@@ -50,5 +57,10 @@ class ArtworkController extends BaseController {
 	public function handleDelete()
 	{
 	    // handle delete confirmation form
+	    $id = Input::get('artwork');
+	    $artwork = Artwork::findOrFail($id);
+	    $artwork->delete();
+	    // show list
+	    return Redirect::action('ArtworkController@index');
 	}
 }

@@ -34,13 +34,22 @@ class PerformanceController extends BaseController {
 	
 	public function edit(Performance $performance)
 	{
-	    // show edit performance form
-	    return View::make('performance-edit');
+	    // show edit form
+	    return View::make('performance-edit', compact('performance'));
 	}
 	
 	public function handleEdit()
 	{
 	    // handle edit form submission
+	    $performance = Performance::findOrFail(Input::get('id'));
+	    $performance->slug = Input::get('slug');
+	    $performance->namefull = Input::get('namefull');
+	    $performance->description = Input::get('description');
+	    $performance->timestart = Input::get('timestart');
+	    $performance->rating = Input::get('rating');
+	    $performance->save();
+	    // get us back to index after saving
+	    return Redirect::action('PerformanceController@index');
 	}
 	
 	public function delete()
@@ -52,5 +61,10 @@ class PerformanceController extends BaseController {
 	public function handleDelete()
 	{
 	    // handle delete confirmation form
+	    $id = Input::get('performance');
+	    $performance = Performance::findOrFail($id);
+	    $performance->delete();
+	    // show list
+	    return Redirect::action('PerformanceController@index');
 	}
 }

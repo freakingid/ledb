@@ -34,13 +34,22 @@ class EventController extends BaseController {
 	
 	public function edit(Event $event)
 	{
-	    // show edit event form
-	    return View::make('event-edit');
+	    // show edit form
+	    return View::make('event-edit', compact('event'));
 	}
 	
 	public function handleEdit()
 	{
 	    // handle edit form submission
+	    $event = Event::findOrFail(Input::get('id'));
+	    $event->slug = Input::get('slug');
+	    $event->namefull = Input::get('namefull');
+	    $event->description = Input::get('description');
+	    $event->timestart = Input::get('timestart');
+	    $event->timeend = Input::get('timeend');
+	    $event->save();
+	    // get us back to index after saving
+	    return Redirect::action('EventController@index');
 	}
 	
 	public function delete()
@@ -52,5 +61,10 @@ class EventController extends BaseController {
 	public function handleDelete()
 	{
 	    // handle delete confirmation form
+	    $id = Input::get('event');
+	    $event = Event::findOrFail($id);
+	    $event->delete();
+	    // show list
+	    return Redirect::action('EventController@index');
 	}
 }

@@ -34,13 +34,22 @@ class PersonController extends BaseController {
 	
 	public function edit(Person $person)
 	{
-	    // show edit person form
-	    return View::make('person-edit');
+	    // show edit form
+	    return View::make('person-edit', compact('person'));
 	}
 	
 	public function handleEdit()
 	{
 	    // handle edit form submission
+	    $person = Person::findOrFail(Input::get('id'));
+	    $person->username = Input::get('username');
+	    $person->namefirst = Input::get('namefirst');
+	    $person->namelast = Input::get('namelast');
+	    $person->dob = Input::get('dob');
+	    $person->email = Input::get('email');
+	    $person->save();
+	    // get us back to index after saving
+	    return Redirect::action('PersonController@index');
 	}
 	
 	public function delete()
@@ -52,5 +61,10 @@ class PersonController extends BaseController {
 	public function handleDelete()
 	{
 	    // handle delete confirmation form
+	    $id = Input::get('person');
+	    $person = Person::findOrFail($id);
+	    $person->delete();
+	    // show list
+	    return Redirect::action('PersonController@index');
 	}
 }
