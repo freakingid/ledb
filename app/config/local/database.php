@@ -17,8 +17,15 @@ return array(
 	| choice installed on your machine before you begin development.
 	|
 	*/
+	'default' => 'sqlite',
 
 	'connections' => array(
+		
+		'sqlite' => array(
+			'driver' => 'sqlite',
+			'database' => app_path() . '/storage/development.sqlite',
+			'prefix' => '',
+		),
 		
 		'mysql' => array(
 			'driver'    => 'mysql',
