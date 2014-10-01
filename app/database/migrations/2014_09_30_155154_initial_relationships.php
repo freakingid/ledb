@@ -52,7 +52,7 @@ class InitialRelationships extends Migration {
 	    Schema::table('events', function($table)
 	    {
 	        $table->integer('location_id')->unsigned();
-	        $table->foreign('location_id')->references('id')->on('events');
+	        $table->foreign('location_id')->references('id')->on('locations');
 	    }); 
 	    
 	    // event belongs_to tour; tour has_many events;
@@ -71,7 +71,29 @@ class InitialRelationships extends Migration {
 	 */
 	public function down()
 	{
-		//
+		// TODO: we probably need to remove references before we can drop certain columns or tables
+		// this will be with dropForeign
+		// http://laravel.com/docs/4.2/schema#foreign-keys
+		// table_field_foreign
+		// dropForeign('locations_id_foreign');
+		
+		// TODO: There are more foreigns to remove. Need one dropForeign for eadh foreign
+		// remove one to many references
+		Schema::table('events', function($table)
+		{
+			$table->dropForeign('locations_id_foreign'); // TODO is this correct?
+			$table->dropForeign('tours_id_foreign'); // TODO is this correct?
+			$table->dropColumn(array('tour_id', 'location_id'));
+		});
+		Schema::table('performances', function($table)
+		{
+			$table->dropForeign('artworks_id_foreign'); // TODO is this correct?
+			$table->dropColumn(array('event_id', 'artwork_id'));
+		});
+
+		// remove pivot tables
+		Schema::drop('person_performance');
+		Schema::drop('artwork_person');
 	}
 
 }
