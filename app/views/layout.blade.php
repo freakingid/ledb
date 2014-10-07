@@ -9,7 +9,12 @@
     <div class="container">
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-                <a href="{{ action('PerformanceController@index') }}" class="navbar-brand">Live Performances</a>
+                <a href="{{ action('ArtworkController@index') }}" class="navbar-brand">Artwork</a>
+                <a href="{{ action('EventController@index') }}" class="navbar-brand">Events</a>
+                <a href="{{ action('LocationController@index') }}" class="navbar-brand">Locations</a>
+                <a href="{{ action('PerformanceController@index') }}" class="navbar-brand">Performances</a>
+                <a href="{{ action('PersonController@index') }}" class="navbar-brand">People</a>
+                <a href="{{ action('TourController@index') }}" class="navbar-brand">Tours</a>
             </div>
         </nav>
         @yield('content')
