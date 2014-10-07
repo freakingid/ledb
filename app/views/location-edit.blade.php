@@ -9,17 +9,15 @@
         <input type="hidden" name="id" value="{{ $location->id }}" />
         <div class="form-group">
             <label for="slug">Slug</label>
-            <input type="text" class="form-control" name="title" value="{{ $location->slug }}" />
+            <input type="text" class="form-control" name="slug" value="{{ $location->slug }}" />
         </div>
         <div class="form-group">
             <label for="namefull">Full Location Name</label>
             <input type="text" class="form-control" name="namefull" value="{{ $location->namefull }}" />
         </div>
         <div class="form-group">
-            <label for="description">Description</label>
-            <textarea  name="description" rows="4" cols="50">
-            {{ $location->description }}"
-            </textarea>
+            <label for="description">Description</label><br />
+            <textarea  name="description" rows="4" cols="50">{{ $location->description }}"</textarea>
         </div>
         <div class="form-group">
             <label for="addr1">Address 1</label>

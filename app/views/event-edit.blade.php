@@ -9,17 +9,15 @@
         <input type="hidden" name="id" value="{{ $event->id }}" />
         <div class="form-group">
             <label for="slug">Slug</label>
-            <input type="text" class="form-control" name="title" value="{{ $event->slug }}" />
+            <input type="text" class="form-control" name="slug" value="{{ $event->slug }}" />
         </div>
         <div class="form-group">
             <label for="namefull">Full Event Name</label>
             <input type="text" class="form-control" name="namefull" value="{{ $event->namefull }}" />
         </div>
         <div class="form-group">
-            <label for="description">Description</label>
-            <textarea  name="description" rows="4" cols="50">
-            {{ $event->description }}
-            </textarea>
+            <label for="description">Description</label><br />
+            <textarea  name="description" rows="4" cols="50">{{ $event->description }}</textarea>
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>

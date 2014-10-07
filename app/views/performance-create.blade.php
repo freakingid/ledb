@@ -8,17 +8,15 @@
     <form action="{{ action('PerformanceController@handleCreate') }}" method="post" role="form">
         <div class="form-group">
             <label for="slug">Slug</label>
-            <input type="text" class="form-control" name="title" />
+            <input type="text" class="form-control" name="slug" />
         </div>
         <div class="form-group">
             <label for="namefull">Full Performance Name</label>
             <input type="text" class="form-control" name="namefull" />
         </div>
         <div class="form-group">
-            <label for="description">Description</label>
-            <textarea  name="description" rows="4" cols="50">
-            Default description? Or placeholder please.
-            </textarea>
+            <label for="description">Description</label><br />
+            <textarea  name="description" rows="4" cols="50">Default description? Or placeholder please.</textarea>
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>
