@@ -5,7 +5,7 @@
         <h1>Edit Event</h1>
     </div>
     
-    <form action="{{ action('EventController@handleEdit') }}" method="post" role="form">
+    <form action="{{ action('EventOccurrenceController@handleEdit') }}" method="post" role="form">
         <input type="hidden" name="id" value="{{ $event->id }}" />
         <div class="form-group">
             <label for="slug">Slug</label>
@@ -30,6 +30,6 @@
             <input type="text" class="form-control" name="timeend" value="{{ $event->timeend }}" />
         </div>
         <input type="submit" value="Save" class="btn btn-primary" />
-        <a href="{{ action('EventController@index') }}" class="btn btn-link">Cancel</a>
+        <a href="{{ action('EventOccurrenceController@index') }}" class="btn btn-link">Cancel</a>
     </form>
 @stop

@@ -7,7 +7,7 @@
     
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ action('EventController@create') }}" class="btn btn-primary">Create Event</a>
+            <a href="{{ action('EventOccurrenceController@create') }}" class="btn btn-primary">Create Event</a>
         </div>
     </div>
     
@@ -32,8 +32,8 @@
                     <td>{{ $event->timestart }}</td>
                     <td>{{ $event->timeend }}</td>
                     <td>
-                        <a href="{{ action('EventController@edit', $event->id) }}" class="btn btn-default">Edit</a>
-                        <a href="{{ action('EventController@delete', $event->id) }}" class="btn btn-danger">Delete</a>
+                        <a href="{{ action('EventOccurrenceController@edit', $event->id) }}" class="btn btn-default">Edit</a>
+                        <a href="{{ action('EventOccurrenceController@delete', $event->id) }}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach

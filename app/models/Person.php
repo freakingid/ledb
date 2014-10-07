@@ -2,7 +2,7 @@
 
 // app/models/Person.php
 
-class Persons extends Eloquent
+class Person extends Eloquent
 {
     // Person belongs to many artworks (one person could create numerous artworks)
     public function artworks()

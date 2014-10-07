@@ -40,17 +40,17 @@ Route::post('/artwork/delete', 'ArtworkController@handleDelete');
 
 
 // =======================================================================
-Route::model('event', 'Event');
+Route::model('event', 'EventOccurrence');
 // event pages
-Route::get('/event/', 'EventController@index');
-Route::get('/event/create', 'EventController@create');
-Route::get('/event/edit/{event}', 'EventController@edit');
-Route::get('/event/delete/{event}', 'EventController@delete');
+Route::get('/event/', 'EventOccurrenceController@index');
+Route::get('/event/create', 'EventOccurrenceController@create');
+Route::get('/event/edit/{event}', 'EventOccurrenceController@edit');
+Route::get('/event/delete/{event}', 'EventOccurrenceController@delete');
 
 // event form handlers
-Route::post('/event/create', 'EventController@handleCreate');
-Route::post('/event/edit', 'EventController@handleEdit');
-Route::post('/event/delete', 'EventController@handleDelete');
+Route::post('/event/create', 'EventOccurrenceController@handleCreate');
+Route::post('/event/edit', 'EventOccurrenceController@handleEdit');
+Route::post('/event/delete', 'EventOccurrenceController@handleDelete');
 
 
 

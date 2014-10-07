@@ -1,14 +1,14 @@
 <?php
 
-// app/controllers/EventController
+// app/controllers/EventOccurrenceController
 
-class EventController extends BaseController {
+class EventOccurrenceController extends BaseController {
 
 	public function index()
 	{
 		// show listing of
 	    #warning business logic should be moved out to service
-	    $events = Event::all();
+	    $events = EventOccurrence::all();
 	    return View::make('event-index', compact('events'));
 	}
 	
@@ -21,7 +21,7 @@ class EventController extends BaseController {
 	public function handleCreate()
 	{
 	    // handle creation form submission
-	    $event = new Event;
+	    $event = new EventOccurrence;
 	    $event->slug = Input::get('slug');
 	    $event->namefull = Input::get('namefull');
 	    $event->description = Input::get('description');
@@ -29,10 +29,10 @@ class EventController extends BaseController {
 	    $event->timeend = Input::get('timeend');
 	    $event->save();
 	    // get us back to index after saving
-	    return Redirect::action('EventController@index');
+	    return Redirect::action('EventOccurrenceController@index');
 	}
 	
-	public function edit(Event $event)
+	public function edit(EventOccurrence $event)
 	{
 	    // show edit form
 	    return View::make('event-edit', compact('event'));
@@ -41,7 +41,7 @@ class EventController extends BaseController {
 	public function handleEdit()
 	{
 	    // handle edit form submission
-	    $event = Event::findOrFail(Input::get('id'));
+	    $event = EventOccurrence::findOrFail(Input::get('id'));
 	    $event->slug = Input::get('slug');
 	    $event->namefull = Input::get('namefull');
 	    $event->description = Input::get('description');
@@ -49,7 +49,7 @@ class EventController extends BaseController {
 	    $event->timeend = Input::get('timeend');
 	    $event->save();
 	    // get us back to index after saving
-	    return Redirect::action('EventController@index');
+	    return Redirect::action('EventOccurrenceController@index');
 	}
 	
 	public function delete()
@@ -62,9 +62,9 @@ class EventController extends BaseController {
 	{
 	    // handle delete confirmation form
 	    $id = Input::get('event');
-	    $event = Event::findOrFail($id);
+	    $event = EventOccurrence::findOrFail($id);
 	    $event->delete();
 	    // show list
-	    return Redirect::action('EventController@index');
+	    return Redirect::action('EventOccurrenceController@index');
 	}
 }

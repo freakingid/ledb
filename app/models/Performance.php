@@ -17,7 +17,7 @@ class Performance extends Eloquent
     // performance belongsto one event (each performance is specific to an event)
     public function events()
     {
-        $this->belongsTo('Event');
+        $this->belongsTo('EventOccurrence');
     }
     
 }

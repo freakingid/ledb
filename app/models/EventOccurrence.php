@@ -1,8 +1,9 @@
 <?php
 
-// app/models/Event.php
+// app/models/EventOccurrence.php
+// NOTE: cannot use "Event" as it collides with Laravel keyword class "Event"
 
-class Event extends Eloquent
+class EventOccurrence extends Eloquent
 {
     // event belongstomany performances (more than one performance per event sometimes)
     public function performances()
