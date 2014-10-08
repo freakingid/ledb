@@ -25,8 +25,13 @@ class EventOccurrenceController extends BaseController {
 	    $event->slug = Input::get('slug');
 	    $event->namefull = Input::get('namefull');
 	    $event->description = Input::get('description');
-	    $event->timestart = Input::get('timestart');
-	    $event->timeend = Input::get('timeend');
+
+        // if DateTime fails to parse, will return false!
+	    $dateTimeStart = date_create_from_format('Y-m-d H:i A', Input::get('timestart'));
+        $event->timestart = $dateTimeStart;
+        $dateTimeEnd = date_create_from_format('Y-m-d H:i A', Input::get('timeend'));
+	    $event->timeend = $dateTimeEnd;    
+	    
 	    $event->save();
 	    // get us back to index after saving
 	    return Redirect::action('EventOccurrenceController@index');
@@ -45,8 +50,13 @@ class EventOccurrenceController extends BaseController {
 	    $event->slug = Input::get('slug');
 	    $event->namefull = Input::get('namefull');
 	    $event->description = Input::get('description');
-	    $event->timestart = Input::get('timestart');
-	    $event->timeend = Input::get('timeend');
+
+        // if DateTime fails to parse, will return false!
+	    $dateTimeStart = date_create_from_format('Y-m-d H:i A', Input::get('timestart'));
+        $event->timestart = $dateTimeStart;
+        $dateTimeEnd = date_create_from_format('Y-m-d H:i A', Input::get('timeend'));
+	    $event->timeend = $dateTimeEnd;    
+	    
 	    $event->save();
 	    // get us back to index after saving
 	    return Redirect::action('EventOccurrenceController@index');

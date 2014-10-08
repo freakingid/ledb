@@ -25,8 +25,13 @@ class TourController extends BaseController {
 	    $tour->slug = Input::get('slug');
 	    $tour->namefull = Input::get('namefull');
 	    $tour->description = Input::get('description');
-	    $tour->timestart = Input::get('timestart');
-	    $tour->timeend = Input::get('timeend');
+
+        // if DateTime fails to parse, will return false!
+	    $dateTimeStart = date_create_from_format('Y-m-d H:i A', Input::get('timestart'));
+        $tour->timestart = $dateTimeStart;
+        $dateTimeEnd = date_create_from_format('Y-m-d H:i A', Input::get('timeend'));
+	    $tour->timeend = $dateTimeEnd;    
+	    
 	    $tour->save();
 	    // get us back to index after saving
 	    return Redirect::action('TourController@index');
@@ -45,8 +50,13 @@ class TourController extends BaseController {
 	    $tour->slug = Input::get('slug');
 	    $tour->namefull = Input::get('namefull');
 	    $tour->description = Input::get('description');
-	    $tour->timestart = Input::get('timestart');
-	    $tour->timeend = Input::get('timeend');
+
+        // if DateTime fails to parse, will return false!
+	    $dateTimeStart = date_create_from_format('Y-m-d H:i A', Input::get('timestart'));
+        $tour->timestart = $dateTimeStart;
+        $dateTimeEnd = date_create_from_format('Y-m-d H:i A', Input::get('timeend'));
+	    $tour->timeend = $dateTimeEnd;    
+	    
 	    $tour->save();
 	    // get us back to index after saving
 	    return Redirect::action('TourController@index');

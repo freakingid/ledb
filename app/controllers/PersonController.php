@@ -25,7 +25,11 @@ class PersonController extends BaseController {
 	    $person->username = Input::get('username');
 	    $person->namefirst = Input::get('namefirst');
 	    $person->namelast = Input::get('namelast');
-	    $person->dob = Input::get('dob');
+	    
+        // if DateTime fails to parse, will return false!
+	    $dateTimeStart = date_create_from_format('Y-m-d H:i A', Input::get('timestart'));
+        $person->dob = $dateTimeStart;
+
 	    $person->email = Input::get('email');
 	    $person->save();
 	    // get us back to index after saving
@@ -45,7 +49,11 @@ class PersonController extends BaseController {
 	    $person->username = Input::get('username');
 	    $person->namefirst = Input::get('namefirst');
 	    $person->namelast = Input::get('namelast');
-	    $person->dob = Input::get('dob');
+	    
+        // if DateTime fails to parse, will return false!
+	    $dateTimeStart = date_create_from_format('Y-m-d H:i A', Input::get('timestart'));
+        $person->dob = $dateTimeStart;
+
 	    $person->email = Input::get('email');
 	    $person->save();
 	    // get us back to index after saving

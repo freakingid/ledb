@@ -25,7 +25,11 @@ class PerformanceController extends BaseController {
 	    $performance->slug = Input::get('slug');
 	    $performance->namefull = Input::get('namefull');
 	    $performance->description = Input::get('description');
-	    $performance->timestart = Input::get('timestart');
+	    
+        // if DateTime fails to parse, will return false!
+	    $dateTimeStart = date_create_from_format('Y-m-d H:i A', Input::get('timestart'));
+        $performance->timestart = $dateTimeStart;
+
 	    $performance->rating = Input::get('rating');
 	    $performance->save();
 	    // get us back to index after saving
@@ -45,7 +49,11 @@ class PerformanceController extends BaseController {
 	    $performance->slug = Input::get('slug');
 	    $performance->namefull = Input::get('namefull');
 	    $performance->description = Input::get('description');
-	    $performance->timestart = Input::get('timestart');
+	    
+        // if DateTime fails to parse, will return false!
+	    $dateTimeStart = date_create_from_format('Y-m-d H:i A', Input::get('timestart'));
+        $performance->timestart = $dateTimeStart;
+
 	    $performance->rating = Input::get('rating');
 	    $performance->save();
 	    // get us back to index after saving
