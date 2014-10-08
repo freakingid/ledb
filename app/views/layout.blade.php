@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <title>Live Entertainment Database</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" />
+    <script src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
+    <script src="{{ asset('js/moment-with-locales.js') }}"></script>
+    <!-- does bootstrap.min have collapse and transitions included? needed -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {  
+        if($('#startPicker').length) {          
+            $('#startPicker').datetimepicker({
+                format: 'YYYY-MM-DD hh:mm A'
+            });
+        }
+        if($('#endPicker').length) {
+            $('#endPicker').datetimepicker({
+                format: 'YYYY-MM-DD hh:mm A'
+            });
+            // make start / end pickers work together to stay in bounds
+            $('#startPicker').on('dp.change',function (e) {
+                $('#endPicker').data("DateTimePicker").setMinDate(e.date);
+            });
+            $('#endPicker').on('dp.change',function (e) {
+                $('#startPicker').data("DateTimePicker").setMaxDate(e.date);
+            });
+        }
+    });
+    </script>
 </head>
 <body>
     <div class="container">

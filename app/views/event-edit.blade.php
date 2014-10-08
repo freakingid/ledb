@@ -21,11 +21,11 @@
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>
-            <input type="text" class="form-control" name="timestart" value="{{ $event->timestart }}" />
+            <input type="text" id="startPicker" class="form-control" name="timestart" value="{{ $event->timestart }}" />
         </div>
         <div class="form-group">
             <label for="timeend">End date / time</label>
-            <input type="text" class="form-control" name="timeend" value="{{ $event->timeend }}" />
+            <input type="text" id="endPicker" class="form-control" name="timeend" value="{{ $event->timeend }}" />
         </div>
         <input type="submit" value="Save" class="btn btn-primary" />
         <a href="{{ action('EventOccurrenceController@index') }}" class="btn btn-link">Cancel</a>

@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label for="dob">Birthday</label>
-            <input type="text" class="form-control" name="timestart" value="{{ $person->timestart }}" />
+            <input type="text" id="startPicker" class="form-control" name="timestart" value="{{ $person->timestart }}" />
         </div>
         <div class="form-group">
             <label for="email">Email Address</label>

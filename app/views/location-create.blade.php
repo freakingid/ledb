@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label><br />
-            <textarea  name="description" rows="4" cols="50">Default description? Or placeholder please.</textarea>
+            <textarea name="description" rows="4" cols="50" placeholder="Describe this location for us."></textarea>
         </div>
         <div class="form-group">
             <label for="addr1">Address 1</label>

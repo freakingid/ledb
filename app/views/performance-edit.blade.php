@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>
-            <input type="text" class="form-control" name="timestart" value="{{ $performance->timestart }}" />
+            <input type="text" id="startPicker" class="form-control" name="timestart" value="{{ $performance->timestart }}" />
         </div>
         <div class="form-group">
             <label for="rating">Rating</label>

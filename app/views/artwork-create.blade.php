@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label><br />
-            <textarea  name="description" rows="4" cols="50">Default description? Or placeholder please.</textarea>
+            <textarea  name="description" rows="4" cols="50" placeholder="Describe this work of art."></textarea>
         </div>
         <input type="submit" value="Create" class="btn btn-primary" />
         <a href="{{ action('ArtworkController@index') }}" class="btn btn-link">Cancel</a>

@@ -16,15 +16,15 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label><br />
-            <textarea  name="description" rows="4" cols="50">Default description? Or placeholder please.</textarea>
+            <textarea name="description" rows="4" cols="50" placeholder="Describe this event for us."></textarea>
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>
-            <input type="text" class="form-control" name="timestart" value="Replace with datepicker" />
+            <input type="text" id="startPicker" class="form-control" name="timestart" value="Replace with datepicker" />
         </div>
         <div class="form-group">
             <label for="timeend">End date / time</label>
-            <input type="text" class="form-control" name="timeend" value="Replace with datepicker" />
+            <input type="text" id="endPicker" class="form-control" name="timeend" value="Replace with datepicker" />
         </div>
         <input type="submit" value="Create" class="btn btn-primary" />
         <a href="{{ action('EventOccurrenceController@index') }}" class="btn btn-link">Cancel</a>
