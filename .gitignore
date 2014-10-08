@@ -1,5 +1,6 @@
 .c9/
 app/config/local
+outside-resources
 /bootstrap/compiled.php
 /vendor
 composer.phar
