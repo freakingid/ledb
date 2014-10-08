@@ -27,6 +27,14 @@
             <label for="timeend">End date / time</label>
             <input type="text" id="endPicker" class="form-control" name="timeend" value="{{ $event->timeend }}" />
         </div>
+        <div class="form-group".
+            <label for="tour">Tour</label><br />
+            <p>Here we need to use a single-select method listing available tours.</p>
+        </div>
+        <div class="form-group".
+            <label for="location">Location</label><br />
+            <p>Here we need to use a single-select method listing available locations.</p>
+        </div>
         <input type="submit" value="Save" class="btn btn-primary" />
         <a href="{{ action('EventOccurrenceController@index') }}" class="btn btn-link">Cancel</a>
     </form>

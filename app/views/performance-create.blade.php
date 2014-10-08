@@ -31,6 +31,18 @@
             <input type="radio" name="rating" value="4">4<br />
             <input type="radio" name="rating" value="5">5<br />
         </div>
+        <div class="form-group".
+            <label for="artwork">Artwork</label><br />
+            <p>Here we need to use a single-select method listing available artworks.</p>
+        </div>
+        <div class="form-group".
+            <label for="event">Event</label><br />
+            <p>Here we need to use a single-select method listing available events.</p>
+        </div>
+        <div class="form-group".
+            <label for="people">People</label><br />
+            <p>Here we need to use a multiple-select method listing available persons as actors etc.</p>
+        </div>
         <input type="submit" value="Create" class="btn btn-primary" />
         <a href="{{ action('PerformanceController@index') }}" class="btn btn-link">Cancel</a>
     </form>

@@ -19,6 +19,10 @@
             <label for="description">Description</label><br />
             <textarea  name="description" rows="4" cols="50">{{ $artwork->description }}</textarea>
         </div>
+        <div class="form-group".
+            <label for="authors">Author(s)</label><br />
+            <p>Here we need to use a multi-select method listing available persons.</p>
+        </div>
         <input type="submit" value="Save" class="btn btn-primary" />
         <a href="{{ action('ArtworkController@index') }}" class="btn btn-link">Cancel</a>
     </form>
