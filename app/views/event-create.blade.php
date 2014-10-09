@@ -29,10 +29,20 @@
         <div class="form-group".
             <label for="tour">Tour</label><br />
             <p>Here we need to use a single-select method listing available tours.</p>
+            <select class="form-control" name="tour">
+            @foreach ($tours as $tour)
+                <option value="{{ $tour->id }}">{{ $tour->namefull }} </option>
+            @endforeach
+            </select>
         </div>
         <div class="form-group".
             <label for="location">Location</label><br />
             <p>Here we need to use a single-select method listing available locations.</p>
+            <select class="form-control" name="location">
+            @foreach ($locations as $location)
+                <option value="{{ $location->id }}">{{ $location->namefull }} </option>
+            @endforeach
+            </select>
         </div>
         <input type="submit" value="Create" class="btn btn-primary" />
         <a href="{{ action('EventOccurrenceController@index') }}" class="btn btn-link">Cancel</a>

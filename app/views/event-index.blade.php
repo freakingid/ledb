@@ -21,6 +21,8 @@
                     <th>Name</th>
                     <th>Start Time</th>
                     <th>End Time</th>
+                    <th>Location</th>
+                    <th>Tour</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -31,6 +33,8 @@
                     <td>{{ $event->namefull }}</td>
                     <td>{{ $event->timestart }}</td>
                     <td>{{ $event->timeend }}</td>
+                    <td>{{ $event->tour_id }}</td>
+                    <td>{{ $event->location_id }}</td>
                     <td>
                         <a href="{{ action('EventOccurrenceController@edit', $event->id) }}" class="btn btn-default">Edit</a>
                         <a href="{{ action('EventOccurrenceController@delete', $event->id) }}" class="btn btn-danger">Delete</a>

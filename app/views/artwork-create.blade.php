@@ -20,8 +20,6 @@
         </div>
         <div class="form-group".
             <label for="authors">Author(s)</label><br />
-            <p>Here we need to use a multi-select method listing available persons.</p>
-            <p>We have passed in $persons as array of Eloquent persons...</p>
             <select class="form-control" multiple name="author[]">
             @foreach ($people as $person)
                 <option value="{{ $person->id }}">{{ $person->namefirst . ' ' . $person->namelast }} </option>

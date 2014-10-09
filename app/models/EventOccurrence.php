@@ -11,12 +11,12 @@ class EventOccurrence extends Eloquent
         return $this->belongsToMany('Performance');
     }
     // event belongsto locations (each event only has one location; for multiples use tour;)
-    public function locations()
+    public function location()
     {
         return $this->belongsTo('Location');
     }
     // event belongsto tours (each event is part of only one tour; for generic use artwork;)
-    public function tours()
+    public function tour()
     {
         return $this->belongsTo('Tour');
     }

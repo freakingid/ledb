@@ -23,7 +23,6 @@
             $('#endPicker').datetimepicker({
                 format: 'YYYY-MM-DD hh:mm A',
                 minDate: '1980-01-01',
-                defaultDate: '2015-01-01'
             });
             // make start / end pickers work together to stay in bounds
             $('#startPicker').on('dp.change',function (e) {

@@ -30,10 +30,22 @@
         <div class="form-group".
             <label for="tour">Tour</label><br />
             <p>Here we need to use a single-select method listing available tours.</p>
+            <p>We still need logic like in Artwork to select the currently-assigned item.</p>
+            <select class="form-control" name="tour">
+            @foreach ($tours as $tour)
+                <option value="{{ $tour->id }}"{{($tour->selected) ? ' selected' : ''}}>{{ $tour->namefull }} </option>
+            @endforeach
+            </select>
         </div>
         <div class="form-group".
             <label for="location">Location</label><br />
             <p>Here we need to use a single-select method listing available locations.</p>
+            <p>We still need logic like in Artwork to select the currently-assigned item.</p>
+            <select class="form-control" name="location">
+            @foreach ($locations as $location)
+                <option value="{{ $location->id }}"{{($location->selected) ? ' selected' : ''}}>{{ $location->namefull }} </option>
+            @endforeach
+            </select>
         </div>
         <input type="submit" value="Save" class="btn btn-primary" />
         <a href="{{ action('EventOccurrenceController@index') }}" class="btn btn-link">Cancel</a>
