@@ -14,8 +14,10 @@ class ArtworkController extends BaseController {
 	
 	public function create()
 	{
+	    // we need to get all people so create artwork form can list them
+	    $people = Person::all();
 	    // show create artwork form
-	    return View::make('artwork-create');
+	    return View::make('artwork-create', compact('people'));
 	}
 	
 	public function handleCreate()
@@ -26,14 +28,34 @@ class ArtworkController extends BaseController {
 	    $artwork->namefull = Input::get('namefull');
 	    $artwork->description = Input::get('description');
 	    $artwork->save();
+	    
+	    // 1. using sync, we hand an array and the array is explicitly all the $people associated (not additive)
+	    // 2. using saveMany, we can do union (WE want Sync though!!)
+	    // $people is an array of Person ids
+	    $people = Input::get('author'); // author[] multiselect from create view
+	    $artwork->people()->sync($people);
+	    
 	    // get us back to index after saving
 	    return Redirect::action('ArtworkController@index');
 	}
 	
 	public function edit(Artwork $artwork)
 	{
+	    // all possible people to select authors from
+	    // or filter results by persons who are not authors on this work??
+	    $people = Person::all();
+	    // all people assigned as authors to current artwork
+	    $assignedAuthors = $artwork->people()->get();
+	    // add 'selected' property on people list to those who are authors
+	    $people->each( function( $person ) use ( $assignedAuthors )
+	    {
+	        if( $assignedAuthors->contains( $person->id ) ) {
+	            $person->selected = true;
+	        }
+	    });
+
 	    // show edit form
-	    return View::make('artwork-edit', compact('artwork'));
+	    return View::make('artwork-edit', compact('artwork', 'people') );
 	}
 	
 	public function handleEdit()
@@ -44,6 +66,10 @@ class ArtworkController extends BaseController {
 	    $artwork->namefull = Input::get('namefull');
 	    $artwork->description = Input::get('description');
 	    $artwork->save();
+
+	    $people = Input::get('author'); // author[] multiselect from create view
+	    $artwork->people()->sync($people);
+
 	    // show list
 	    return Redirect::action('ArtworkController@index');
 	}

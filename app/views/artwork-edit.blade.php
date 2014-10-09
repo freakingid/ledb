@@ -22,6 +22,14 @@
         <div class="form-group".
             <label for="authors">Author(s)</label><br />
             <p>Here we need to use a multi-select method listing available persons.</p>
+            <p>We have passed in $persons as array of Eloquent persons...</p>
+            <p>But here we need to reflect which ones are selected. That is, add 'selected' when option appears in artwork association somehow.</p>
+            <p>Maybe the ArtworkController@edit needs to pass in two arrays?</p>
+            <select multiple name="author[]">
+            @foreach ($people as $person)
+                <option value="{{ $person->id }}"{{($person->selected) ? ' selected' : ''}}>{{ $person->namefirst . ' ' . $person->namelast }} </option>
+            @endforeach
+            </select>
         </div>
         <input type="submit" value="Save" class="btn btn-primary" />
         <a href="{{ action('ArtworkController@index') }}" class="btn btn-link">Cancel</a>
