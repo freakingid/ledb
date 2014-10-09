@@ -11,15 +11,19 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
     <script type="text/javascript">
-    $(document).ready(function() {  
+    $(document).ready(function() { 
         if($('#startPicker').length) {          
             $('#startPicker').datetimepicker({
-                format: 'YYYY-MM-DD hh:mm A'
+                format: 'YYYY-MM-DD hh:mm A',
+                minDate: '1980-01-01',
+                defaultDate: '2015-01-01'
             });
         }
         if($('#endPicker').length) {
             $('#endPicker').datetimepicker({
-                format: 'YYYY-MM-DD hh:mm A'
+                format: 'YYYY-MM-DD hh:mm A',
+                minDate: '1980-01-01',
+                defaultDate: '2015-01-01'
             });
             // make start / end pickers work together to stay in bounds
             $('#startPicker').on('dp.change',function (e) {

@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>
-            <input type="text" id="startPicker" class="form-control" name="timestart" value="Replace with datepicker" />
+            <input type="text" id="startPicker" class="form-control" name="timestart" />
         </div>
         <div class="form-group">
             <label for="rating">Rating</label>

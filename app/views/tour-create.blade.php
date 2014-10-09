@@ -20,11 +20,11 @@
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>
-            <input type="text" id="startPicker" class="form-control" name="timestart" value="Replace with datepicker" />
+            <input type="text" id="startPicker" class="form-control" name="timestart" />
         </div>
         <div class="form-group">
             <label for="timeend">End date / time</label>
-            <input type="text" id="endPicker" class="form-control" name="timeend" value="Replace with datepicker" />
+            <input type="text" id="endPicker" class="form-control" name="timeend" />
         </div>
         <input type="submit" value="Create" class="btn btn-primary" />
         <a href="{{ action('TourController@index') }}" class="btn btn-link">Cancel</a>
