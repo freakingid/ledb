@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label><br />
-            <textarea name="description" rows="4" cols="50" placeholder="Describe this event for us."></textarea>
+            <textarea class="form-control" name="description" rows="4" placeholder="Describe this event for us."></textarea>
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>

@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label><br />
-            <textarea name="description" rows="4" cols="50">{{ $tour->description }}"</textarea>
+            <textarea class="form-control" name="description" rows="4">{{ $tour->description }}"</textarea>
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>

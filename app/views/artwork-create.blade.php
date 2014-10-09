@@ -16,13 +16,13 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label><br />
-            <textarea  name="description" rows="4" cols="50" placeholder="Describe this work of art."></textarea>
+            <textarea class="form-control" name="description" rows="4" placeholder="Describe this work of art."></textarea>
         </div>
         <div class="form-group".
             <label for="authors">Author(s)</label><br />
             <p>Here we need to use a multi-select method listing available persons.</p>
             <p>We have passed in $persons as array of Eloquent persons...</p>
-            <select multiple name="author[]">
+            <select class="form-control" multiple name="author[]">
             @foreach ($people as $person)
                 <option value="{{ $person->id }}">{{ $person->namefirst . ' ' . $person->namelast }} </option>
             @endforeach

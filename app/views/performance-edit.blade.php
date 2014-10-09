@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label><br />
-            <textarea  name="description" rows="4" cols="50">{{ $performance->description }}"</textarea>
+            <textarea class="form-control" name="description" rows="4">{{ $performance->description }}"</textarea>
         </div>
         <div class="form-group">
             <label for="timestart">Start date / time</label>
@@ -25,12 +25,12 @@
         </div>
         <div class="form-group">
             <label for="rating">Rating</label>
-            <input type="radio" name="rating" value="0">0<br />
-            <input type="radio" name="rating" value="1">1<br />
-            <input type="radio" name="rating" value="2">2<br />
-            <input type="radio" name="rating" value="3">3<br />
-            <input type="radio" name="rating" value="4">4<br />
-            <input type="radio" name="rating" value="5">5<br />
+            <input class="form-control" type="radio" name="rating" value="0">0<br />
+            <input class="form-control" type="radio" name="rating" value="1">1<br />
+            <input class="form-control" type="radio" name="rating" value="2">2<br />
+            <input class="form-control" type="radio" name="rating" value="3">3<br />
+            <input class="form-control" type="radio" name="rating" value="4">4<br />
+            <input class="form-control" type="radio" name="rating" value="5">5<br />
         </div>
         <div class="form-group".
             <label for="artwork">Artwork</label><br />
