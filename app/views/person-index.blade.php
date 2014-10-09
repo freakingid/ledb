@@ -17,7 +17,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Slug</th>
+                    <th>Username</th>
                     <th>Name</th>
                     <th>Birthday</th>
                     <th>Email</th>
@@ -27,10 +27,10 @@
             <tbody>
                 @foreach($people as $person)
                 <tr>
-                    <td>{{ $person->slug }}</td>
+                    <td>{{ $person->username }}</td>
                     <td>{{ $person->namefirst }} {{ $person->namelast}}</td>
-                    <td>{{ $person->timestart }}</td>
-                    <td>{{ $person->rating }}</td>
+                    <td>{{ $person->dob }}</td>
+                    <td>{{ $person->email }}</td>
                     <td>
                         <a href="{{ action('PersonController@edit', $person->id) }}" class="btn btn-default">Edit</a>
                         <a href="{{ action('PersonController@delete', $person->id) }}" class="btn btn-danger">Delete</a>
