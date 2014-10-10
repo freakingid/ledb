@@ -2,6 +2,18 @@
 
 // app/models/EventOccurrence.php
 // NOTE: cannot use "Event" as it collides with Laravel keyword class "Event"
+/*
+- Tour
+-- Event 1
+---- Location (only one)
+---- Performance 1
+------ Actors List
+------ Artwork (only one)
+---- Performance 2
+------ Actors List
+------ Artwork (only one)
+... and so forth
+*/
 
 class EventOccurrence extends Eloquent
 {

@@ -7,17 +7,17 @@ class Performance extends Eloquent
     // performance belongstomany persons (more than one performer)
     public function people()
     {
-        $this->belongsToMany('Person');
+        return $this->belongsToMany('Person');
     }
     // performance belongsto one artwork (only performing one work per performance)
-    public function artworks()
+    public function artwork()
     {
-        $this->belongsTo('Artwork');
+        return $this->belongsTo('Artwork');
     }
     // performance belongsto one event (each performance is specific to an event)
-    public function events()
+    public function event()
     {
-        $this->belongsTo('EventOccurrence');
+        return $this->belongsTo('EventOccurrence');
     }
     
 }

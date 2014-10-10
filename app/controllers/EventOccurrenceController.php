@@ -88,7 +88,7 @@ class EventOccurrenceController extends BaseController {
 	    $event->namefull = Input::get('namefull');
 	    $event->description = Input::get('description');
 
-        // if DateTime fails to parse, will return false!
+        // TODO if DateTime fails to parse, will return false!
 	    $dateTimeStart = date_create_from_format('Y-m-d H:i A', Input::get('timestart'));
         $event->timestart = $dateTimeStart;
         $dateTimeEnd = date_create_from_format('Y-m-d H:i A', Input::get('timeend'));

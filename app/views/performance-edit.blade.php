@@ -32,18 +32,38 @@
             <input class="form-control" type="radio" name="rating" value="4">4<br />
             <input class="form-control" type="radio" name="rating" value="5">5<br />
         </div>
+
+
+
         <div class="form-group".
-            <label for="artwork">Artwork</label><br />
-            <p>Here we need to use a single-select method listing available artworks.</p>
+            <label for="tour">Artwork</label><br />
+            <select class="form-control" name="artwork">
+            @foreach ($artworks as $artwork)
+                <option value="{{ $artwork->id }}"{{($artwork->selected) ? ' selected' : ''}}>{{ $artwork->namefull }} </option>
+            @endforeach
+            </select>
         </div>
         <div class="form-group".
-            <label for="event">Event</label><br />
-            <p>Here we need to use a single-select method listing available events.</p>
+            <label for="location">Event</label><br />
+            <select class="form-control" name="event">
+            @foreach ($events as $event)
+                <option value="{{ $event->id }}"{{($event->selected) ? ' selected' : ''}}>{{ $event->namefull }} </option>
+            @endforeach
+            </select>
         </div>
+        
+        
         <div class="form-group".
-            <label for="people">People</label><br />
-            <p>Here we need to use a multiple-select method listing available persons as actors etc.</p>
+            <label for="actors">Actor(s)</label><br />
+            <select class="form-control" multiple name="actor[]">
+            @foreach ($people as $person)
+                <option value="{{ $person->id }}"{{($person->selected) ? ' selected' : ''}}>{{ $person->namefirst . ' ' . $person->namelast }} </option>
+            @endforeach
+            </select>
         </div>
+
+
+
         <input type="submit" value="Edit" class="btn btn-primary" />
         <a href="{{ action('PerformanceController@index') }}" class="btn btn-link">Cancel</a>
     </form>
