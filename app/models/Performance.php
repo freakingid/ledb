@@ -20,4 +20,16 @@ class Performance extends Eloquent
         return $this->belongsTo('EventOccurrence');
     }
     
+    public function delete()
+    {
+        // set all related models to have null Performance, or default
+        // TODO this is not very efficient / scalable
+        // we have to go through each person and change something...
+        // remove references to people        
+        $this->people()->detach();
+        // do we need to detach artwork and event also, here??
+
+        // now delete the performance
+        return parent::delete();        
+    }
 }

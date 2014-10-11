@@ -132,10 +132,10 @@ class PerformanceController extends BaseController {
 	    return Redirect::action('PerformanceController@index');
 	}
 	
-	public function delete()
+	public function delete(Performance $performance)
 	{
 	    // show delete confirmation
-	    return View::make('performance-delete');
+	    return View::make('performance-delete', compact('performance'));
 	}
 	
 	public function handleDelete()

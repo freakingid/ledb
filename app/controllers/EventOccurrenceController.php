@@ -105,10 +105,10 @@ class EventOccurrenceController extends BaseController {
 	    return Redirect::action('EventOccurrenceController@index');
 	}
 	
-	public function delete()
+	public function delete(EventOccurrence $event)
 	{
 	    // show delete confirmation
-	    return View::make('event-delete');
+	    return View::make('event-delete', compact('event'));
 	}
 	
 	public function handleDelete()

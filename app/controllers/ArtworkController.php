@@ -74,10 +74,10 @@ class ArtworkController extends BaseController {
 	    return Redirect::action('ArtworkController@index');
 	}
 	
-	public function delete()
+	public function delete(Artwork $artwork)
 	{
 	    // show delete confirmation
-	    return View::make('artwork-delete');
+	    return View::make('artwork-delete', compact('artwork'));
 	}
 	
 	public function handleDelete()

@@ -62,10 +62,10 @@ class TourController extends BaseController {
 	    return Redirect::action('TourController@index');
 	}
 	
-	public function delete()
+	public function delete(Tour $tour)
 	{
 	    // show delete confirmation
-	    return View::make('tour-delete');
+	    return View::make('tour-delete', compact('tour'));
 	}
 	
 	public function handleDelete()

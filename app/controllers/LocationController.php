@@ -62,10 +62,10 @@ class LocationController extends BaseController {
 	    return Redirect::action('LocationController@index');
 	}
 	
-	public function delete()
+	public function delete(Location $location)
 	{
 	    // show delete confirmation
-	    return View::make('location-delete');
+	    return View::make('location-delete', compact('location'));
 	}
 	
 	public function handleDelete()

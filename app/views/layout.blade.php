@@ -36,17 +36,29 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
             <div class="navbar-header">
-                <a href="{{ action('ArtworkController@index') }}" class="navbar-brand">Artwork</a>
-                <a href="{{ action('EventOccurrenceController@index') }}" class="navbar-brand">Events</a>
-                <a href="{{ action('LocationController@index') }}" class="navbar-brand">Locations</a>
-                <a href="{{ action('PerformanceController@index') }}" class="navbar-brand">Performances</a>
-                <a href="{{ action('PersonController@index') }}" class="navbar-brand">People</a>
-                <a href="{{ action('TourController@index') }}" class="navbar-brand">Tours</a>
+                <!-- toggle button goes here for mobile -->
+                <!-- branding / site home -->
+                <a class="navbar-brand" href="{{ action('PerformanceController@index') }}">LiEnDaBa</a>
             </div>
-        </nav>
+            <div class="navbar-collapse collapse" style="height: 1px;">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ action('ArtworkController@index') }}" class="navbar-brand">Artwork</a></li>
+                    <li><a href="{{ action('EventOccurrenceController@index') }}" class="navbar-brand">Events</a></li>
+                    <li><a href="{{ action('LocationController@index') }}" class="navbar-brand">Locations</a></li>
+                    <li><a href="{{ action('PerformanceController@index') }}" class="navbar-brand">Performances</a></li>
+                    <li><a href="{{ action('PersonController@index') }}" class="navbar-brand">People</a></li>
+                    <li><a href="{{ action('TourController@index') }}" class="navbar-brand">Tours</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>Fake</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
         @yield('content')
     </div>
 </body>

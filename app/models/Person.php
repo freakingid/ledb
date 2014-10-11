@@ -14,4 +14,21 @@ class Person extends Eloquent
     {
         return $this->belongsToMany('Performance');
     }
+
+    // deleting the person object
+    public function delete()
+    {
+        // set all related models to have null Person, or default
+        // TODO this is not very efficient / scalable
+        // we have to go through each performance and change something...
+        
+        // remove performance references
+        $this->performances()->detach();
+        // any other references to remove??
+        // do we need to detach artworks too?
+
+        // now delete the person
+        return parent::delete();        
+    }
+
 }

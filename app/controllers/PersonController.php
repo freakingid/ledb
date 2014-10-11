@@ -60,10 +60,10 @@ class PersonController extends BaseController {
 	    return Redirect::action('PersonController@index');
 	}
 	
-	public function delete()
+	public function delete(Person $person)
 	{
 	    // show delete confirmation
-	    return View::make('person-delete');
+	    return View::make('person-delete', compact('person'));
 	}
 	
 	public function handleDelete()

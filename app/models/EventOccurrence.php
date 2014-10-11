@@ -17,10 +17,10 @@
 
 class EventOccurrence extends Eloquent
 {
-    // event belongstomany performances (more than one performance per event sometimes)
+    // event has_many performances (more than one performance per event sometimes)
     public function performances()
     {
-        return $this->belongsToMany('Performance');
+        return $this->hasMany('Performance');
     }
     // event belongsto locations (each event only has one location; for multiples use tour;)
     public function location()
@@ -32,4 +32,23 @@ class EventOccurrence extends Eloquent
     {
         return $this->belongsTo('Tour');
     }
+
+    public function delete()
+    {
+        /*
+            1. Find performances that have event_id == $this->id
+            2. Set event_id == null on those performances
+            3. Save
+        */
+        $this->performances()->get()->each( function( $performance )
+        {
+            // unset performance's reference to this artwork
+            $performance->event_occurrence_id = null;
+            $performance->save();
+        });
+
+        // now delete the artwork
+        return parent::delete();        
+    }
+
 }
